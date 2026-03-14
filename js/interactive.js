@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (dist2 < connectionDist) {
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(249, 109, 0, ${0.2 * (1 - dist2 / connectionDist)})`;
+                    ctx.strokeStyle = `rgba(0, 180, 216, ${0.2 * (1 - dist2 / connectionDist)})`;
                     ctx.lineWidth = 0.5;
                     ctx.moveTo(star.x, star.y);
                     ctx.lineTo(other.x, other.y);
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            ctx.fillStyle = '#f96d00';
+            ctx.fillStyle = '#00b4d8';
             ctx.beginPath();
             ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
             ctx.fill();

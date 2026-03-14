@@ -3,8 +3,8 @@
 :root {
     --bg-color: #050505;
     --text-color: #ffffff;
-    --accent-color: #f96d00;
-    --accent-glow: rgba(249, 109, 0, 0.4);
+    --accent-color: #00b4d8; /* Bluish-green */
+    --accent-glow: rgba(0, 180, 216, 0.4);
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.08);
 }
@@ -146,7 +146,7 @@ button,
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at center, rgba(249, 109, 0, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(0, 180, 216, 0.05) 0%, transparent 70%);
 }
 
 .glass-card {
@@ -215,13 +215,24 @@ button,
         margin-top: 15px; /* Adjust top padding */
     }
     .colorlib-logo {
-        font-size: 1.5rem !important; /* Make sure it fits nicely */
+        font-size: 1.25rem !important; /* Reduced to fit nicely on one line */
+        white-space: nowrap; /* Prevent two lines */
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Force column to horizontally center flex child on mobile */
+    .col-md-4.d-flex {
+        justify-content: center !important;
+        width: 100%;
     }
 
     /* Fix: "My skills" cards alignment */
     .services, .block-6 {
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 30px; /* Add bottom margin so they don't touch */
+        width: 100%;
         max-width: 300px; /* Keep them neat and centered instead of stretching */
     }
 
@@ -229,8 +240,12 @@ button,
     .counter-wrap {
         margin-bottom: 20px; /* Space between counter cards */
         display: flex;
+        flex-direction: column; /* Ensure vertical stacking for can + card */
+        align-items: center;
         justify-content: center; /* Center horizontally */
         width: 100%;
+        flex: 0 0 100% !important; /* Force 100% width so centering applies to the whole screen */
+        max-width: 100% !important;
     }
     
     .counter-glow {
@@ -250,10 +265,10 @@ button,
     }
     .redbull-container {
         position: relative;
+        left: 50%; /* Push 50% so `transform: translateX(-50%)` centers it perfectly */
         top: 0;
-        right: 0;
-        transform: translateY(0);
-        margin: 0 auto -30px auto; /* Center the can and overlap slightly with the card */
+        right: auto;
+        margin: 0 0 -30px 0; /* Center the can and overlap slightly with the card */
     }
 
     /* General Project Cards adjustments */
@@ -295,7 +310,7 @@ button,
 .counter-glow:hover {
     transform: translateY(-10px) scale(1);
     border-color: var(--accent-color);
-    box-shadow: 0 15px 45px rgba(249, 109, 0, 0.2) !important;
+    box-shadow: 0 15px 45px rgba(0, 180, 216, 0.2) !important;
 }
 
 .counter-glow:hover::before {
@@ -306,7 +321,7 @@ button,
     font-size: 5rem;
     font-weight: 700;
     color: var(--accent-color) !important;
-    text-shadow: 0 0 20px rgba(249, 109, 0, 0.5);
+    text-shadow: 0 0 20px rgba(0, 180, 216, 0.5);
     display: block;
     margin-bottom: 5px;
     font-family: 'Outfit', sans-serif;
@@ -362,7 +377,7 @@ button,
     z-index: 10;
     pointer-events: none;
     animation: floatCan 6s ease-in-out infinite;
-    filter: drop-shadow(0 15px 25px rgba(249, 109, 0, 0.4));
+    filter: drop-shadow(0 15px 25px rgba(0, 180, 216, 0.4));
 }
 
 .redbull-can {
@@ -416,11 +431,11 @@ button,
 
 .skill-fill {
     height: 100%;
-    background: linear-gradient(90deg, #b83d00, var(--accent-color));
+    background: linear-gradient(90deg, #0077b6, var(--accent-color));
     border-radius: 6px;
     position: relative;
     transition: width 1.5s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 0 10px rgba(249, 109, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
 }
 
 .skill-fill::after {
@@ -444,5 +459,5 @@ button,
     background: rgba(0,0,0,0.8);
     padding: 2px 8px;
     border-radius: 4px;
-    border: 1px solid rgba(249, 109, 0, 0.3);
+    border: 1px solid rgba(0, 180, 216, 0.3);
 }
