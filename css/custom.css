@@ -461,3 +461,16 @@ button,
     border-radius: 4px;
     border: 1px solid rgba(0, 180, 216, 0.3);
 }
+
+/* Mobile adjustments for staggered counter layout */
+@media (max-width: 767.98px) {
+    #section-counter .row {
+        justify-content: center !important;
+    }
+    #section-counter .counter-wrap {
+        margin-top: 30px;
+    }
+    #section-counter .row:first-child {
+        margin-top: 0;
+    }
+}
