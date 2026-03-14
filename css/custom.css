@@ -198,7 +198,7 @@ button,
     box-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* Hide cursor on mobile */
+/* Hide cursor on mobile and apply layout fixes */
 @media (max-width: 768px) {
 
     .cursor-dot,
@@ -208,6 +208,57 @@ button,
 
     body {
         cursor: auto;
+    }
+
+    /* Fix: "Shreyasvi Natraj" logo text padding/size on top */
+    .colorlib-navbar-brand {
+        margin-top: 15px; /* Adjust top padding */
+    }
+    .colorlib-logo {
+        font-size: 1.5rem !important; /* Make sure it fits nicely */
+    }
+
+    /* Fix: "My skills" cards alignment */
+    .services, .block-6 {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px; /* Keep them neat and centered instead of stretching */
+    }
+
+    /* Fix: Hackathons / Honors & Achievements / Projects Finished cards layout */
+    .counter-wrap {
+        margin-bottom: 20px; /* Space between counter cards */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        width: 100%;
+    }
+    
+    .counter-glow {
+        width: 100%;
+        max-width: 300px; /* Constrain max width for better mobile appearance */
+    }
+
+    .row.d-flex.justify-content-start,
+    .row.d-flex.justify-content-end,
+    .row.d-flex.justify-content-center {
+        justify-content: center !important; /* Force all rows to center their content on mobile */
+    }
+
+    /* Fix: Red Bull counter card alignment */
+    .redbull-counter-card {
+        margin-top: 20px; /* Remove the extreme top margin needed on desktop */
+    }
+    .redbull-container {
+        position: relative;
+        top: 0;
+        right: 0;
+        transform: translateY(0);
+        margin: 0 auto -30px auto; /* Center the can and overlap slightly with the card */
+    }
+
+    /* General Project Cards adjustments */
+    .block-3 .text {
+        padding: 1.5rem !important;
     }
 }
 
