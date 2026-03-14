@@ -200,7 +200,20 @@ $(document).ready(function($) {
 
 	};
 	pageProgress();
-
+    
+    // Skills visualization update
+	var skillsWaypoint = function() {
+		$('.skill-modern').waypoint( function( direction ) {
+			if( direction === 'down' ) {
+				$('.skill-fill').each(function(){
+					var $this = $(this),
+						val = $this.data('scale');
+					$this.css('width', val);
+				});
+			}
+		} , { offset: '90%' } );
+	};
+	skillsWaypoint();
 
 });
 
